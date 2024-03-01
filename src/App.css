@@ -3,13 +3,28 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  background-color: #21242e;
+  background-color: #282c38;
   color: whitesmoke;
   min-height: 100vh;
+}
+body{
+  background-color: black;
 }
 
 #header a.active{
   color: lightcoral;
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+.homeBanner{
+  background-image: url('');
+}
+.homeBanner .search-input{
+  border-radius: 10px 0 0 10px ;
+  background-color: rgb(67, 74, 88);
+  outline: none;
+}
+.homeBanner .search-button{
+  border-radius: 0 10px 10px 0;
 }
