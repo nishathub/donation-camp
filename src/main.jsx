@@ -12,6 +12,7 @@ import ErrorPage from './Components/ErrorPage/ErrorPage';
 import Home from './Components/Home/Home';
 import Donation from './Components/Donation/Donation';
 import Statistics from './Components/Statistics/Statistics';
+import DonationDetails from './Components/DonationDetails/DonationDetails';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,11 @@ const router = createBrowserRouter([
       {
         path: '/Statistics',
         element: <Statistics></Statistics>,
+      },
+      {
+        path: '/donate-Id/:id',
+        element: <DonationDetails></DonationDetails>,
+        loader: () => fetch('../donationColorUpdateFinal.json')
       },
     ]
   },

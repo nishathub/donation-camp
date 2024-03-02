@@ -31,6 +31,11 @@ body{
 }
 .donation-card-bottom{
   padding: 16px;
-  width: 98.5%;
   border-radius: 0 0 5px 5px;
+}
+.donate-details-image-div{
+
+}
+.donate-details-button-div{
+
 }
