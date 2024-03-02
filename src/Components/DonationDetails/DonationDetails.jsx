@@ -1,5 +1,7 @@
 import { useLoaderData, useParams } from "react-router-dom";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { saveDataToLocalStorage } from "../../JavaScriptFunction/localStorage";
 
 const DonationDetails = () => {
     const { id } = useParams();
@@ -8,10 +10,12 @@ const DonationDetails = () => {
     const allDonatePackages = loadedData.products;
     const matchedPackage = allDonatePackages.find(item => item.product_id == id);
     
-    const { picture, price, description, title, text_button_bg } = matchedPackage;
+    const { product_id, picture, price, description, title, text_button_bg } = matchedPackage;
 
     const handleDonateButton = () => {
-       console.log(price);
+       console.log(price, product_id);
+       toast(`Donated $${price} for '${title}'`);
+       saveDataToLocalStorage(product_id);
     }
 
     return (
@@ -25,6 +29,7 @@ const DonationDetails = () => {
                     </div>
                     <div className="absolute bottom-4 left-4">
                         <button onClick={handleDonateButton} style={{ 'backgroundColor': text_button_bg }} className="p-2 rounded-md hover:opacity-80 duration-300">Donate ${price}</button>
+                        <ToastContainer />
                     </div>
                 </div>
                 <div className="mt-12">

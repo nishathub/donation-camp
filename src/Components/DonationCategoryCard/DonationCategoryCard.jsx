@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 
-
 const DonationCategoryCard = ({item}) => {
     console.log(item);
     const {product_id, picture, category, title, category_bg, card_bg, text_button_bg} = item;

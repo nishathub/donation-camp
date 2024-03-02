@@ -33,9 +33,7 @@ body{
   padding: 16px;
   border-radius: 0 0 5px 5px;
 }
-.donate-details-image-div{
-
-}
-.donate-details-button-div{
-
+.donated-card {
+  /* display: grid;
+  grid-template-columns: 2fr 3fr; */
 }
