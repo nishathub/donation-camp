@@ -33,7 +33,11 @@ body{
   padding: 16px;
   border-radius: 0 0 5px 5px;
 }
-.donated-card {
-  /* display: grid;
-  grid-template-columns: 2fr 3fr; */
+.donated-card img{
+  
+}
+@media (max-width: 600px) {
+  .recharts-wrapper {
+      width: 100%;
+  }
 }
