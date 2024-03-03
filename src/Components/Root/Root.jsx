@@ -1,12 +1,16 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLoaderData } from "react-router-dom";
 import Header from "../Header/Header";
 
 
 const Root = () => {
+    const donationPackage = useLoaderData();
     return (
         <div>
-            <Header></Header>
-            <Outlet></Outlet>
+            <Header donationPackage = {donationPackage}></Header>
+            <div className="content">
+                <Outlet></Outlet>
+            </div>
+
         </div>
     );
 };

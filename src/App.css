@@ -1,14 +1,11 @@
 #root {
-  max-width: 1380px;
+  /* max-width: 1380px; */
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; */
   text-align: center;
-  background-color: #282c38;
+  background-color: rgb(40, 47, 72);
   color: whitesmoke;
   min-height: 100vh;
-}
-body{
-  background-color: black;
 }
 
 #header a.active{
@@ -40,4 +37,9 @@ body{
   .recharts-wrapper {
       width: 100%;
   }
+}
+.content{
+  max-width: 1380px;
+  padding: 2rem;
+  margin: 0 auto;
 }

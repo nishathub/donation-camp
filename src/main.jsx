@@ -19,11 +19,11 @@ const router = createBrowserRouter([
     path: "/",
     element: <Root></Root>,
     errorElement: <ErrorPage></ErrorPage>,
+    loader: () => fetch('../donationColorUpdateFinal.json'),
     children: [
       {
         path: '/',
-        element: <Home></Home>,
-        loader: () => fetch('../donationColorUpdateFinal.json')
+        element: <Home></Home>
       },
       {
         path: '/Donation',

@@ -2,11 +2,6 @@
 
 const HomeBanner = ({ handleSearchButton, error }) => {
 
-    // const handleSearchButton = () => {
-    //     const searchField = document.getElementById('search-input');
-    //     const searchKey = searchField.value;
-    //     console.log(searchKey);
-    // }
     return (
         <div className="homeBanner my-8">
             <h2 className="md:text-5xl sm:text-3xl text-2xl font-semibold capitalize py-8">I grow by helping people in need</h2>
