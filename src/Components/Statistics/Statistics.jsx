@@ -34,6 +34,11 @@ const Statistics = () => {
 
     return (
         <div className='mt-12'>
+            <div>
+                {
+                    donationLength === 0 && <h2 className="text-xl">Your donation Statistics will be illustrated below</h2>
+                }
+            </div>
             <div className='flex justify-center'>
 
                 <PieChart width={400} height={400}>

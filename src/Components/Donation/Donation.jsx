@@ -18,6 +18,11 @@ const Donation = () => {
     return (
 
         <div>
+            <div>
+                {
+                    displayCards.length === 0 && <h2 className="text-xl">Your donations will be displayed here</h2>
+                }
+            </div>
             <div className="grid lg:grid-cols-2 mt-12 gap-8 justify-center items-center">
                 {
                     displayCards.map(item => <DonatedCard key={item.product_id} item={item}></DonatedCard>)
