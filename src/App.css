@@ -11,7 +11,7 @@
 }
 
 #header a.active{
-  color: lightcoral;
+  color: rgb(255, 149, 149);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
