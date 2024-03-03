@@ -17,7 +17,7 @@ const Donation = () => {
     }, [])
     return (
 
-        <div>
+        <div className="my-12">
             <div>
                 {
                     displayCards.length === 0 && <h2 className="text-xl">Your donations will be displayed here</h2>

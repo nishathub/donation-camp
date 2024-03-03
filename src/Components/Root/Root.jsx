@@ -1,5 +1,6 @@
 import { Outlet, useLoaderData } from "react-router-dom";
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 
 const Root = () => {
@@ -10,6 +11,8 @@ const Root = () => {
             <div className="content">
                 <Outlet></Outlet>
             </div>
+                <Footer></Footer>
+            
 
         </div>
     );

@@ -33,7 +33,7 @@ const Statistics = () => {
     };
 
     return (
-        <div className='mt-12'>
+        <div className='mb-16'>
             <div>
                 {
                     donationLength === 0 && <h2 className="text-xl">Your donation Statistics will be illustrated below</h2>
