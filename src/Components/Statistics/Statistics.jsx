@@ -1,4 +1,4 @@
-import { PieChart, Pie, Cell, Legend, Tooltip } from 'recharts';
+import { PieChart, Pie, Cell, Legend, Tooltip, ResponsiveContainer } from 'recharts';
 import { getDataFromLocalStorage } from '../../JavaScriptFunction/localStorage';
 
 
@@ -32,6 +32,20 @@ const Statistics = () => {
         );
     };
 
+    // Set initial values for inner and outer radius
+    let outerRadius1 = 180;
+    let outerRadius2 = 140;
+    let innerRadius1 = 160;
+    let pieSquare = 400;
+
+    //Adjust inner and outer radius based on screen width
+    if (window.innerWidth <= 600) {
+        outerRadius1 = 100;
+        outerRadius2 = 70;
+        innerRadius1 = 85;
+        pieSquare = 300;
+    }
+
     return (
         <div className='mb-16'>
             <div>
@@ -41,14 +55,14 @@ const Statistics = () => {
             </div>
             <div className='flex justify-center'>
 
-                <PieChart width={400} height={400}>
+                <PieChart width={pieSquare} height={pieSquare}>
                     <Pie
                         data={data}
                         cx='50%'
                         cy='50%'
                         labelLine={false}
                         label={renderCustomizedLabel}
-                        outerRadius={120}
+                        outerRadius={outerRadius2}
                         fill="#8884d8"
                         dataKey="value"
                     >
@@ -56,7 +70,7 @@ const Statistics = () => {
                             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                         ))}
                     </Pie>
-                    <Pie data={data2} dataKey="value" cx="50%" cy="50%" innerRadius={130} outerRadius={150} label={renderCustomizedLabel} fill="#82ca9d" />
+                    <Pie data={data2} dataKey="value" cx="50%" cy="50%" innerRadius={innerRadius1} outerRadius={outerRadius1} label={renderCustomizedLabel} fill="#82ca9d" />
                     <Legend />
                     <Tooltip></Tooltip>
                 </PieChart>

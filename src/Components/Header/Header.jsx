@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const Header = ({ donationPackage }) => {
 
-    const { products } = donationPackage;
+    const {products} = donationPackage;
     const [displayProducts, setDisplayProducts] = useState(products);
     const [showError, setShowError] = useState(false);
 
