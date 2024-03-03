@@ -36,7 +36,7 @@ const Header = ({ donationPackage }) => {
 
     const headerStyle = isHome ? {
         // backgroundColor: isHome && 'grey',
-        backgroundImage: 'linear-gradient(rgba(40, 47, 72, 0.95), rgba(40, 47, 72, 0.95)), url(https://i.postimg.cc/t4QdQQkP/group-photo-donation.png)',
+        backgroundImage: 'linear-gradient(rgba(79, 110, 133, 0.85), rgba(40, 47, 72, 0.95)), url(https://i.postimg.cc/t4QdQQkP/group-photo-donation.png)',
         backgroundSize: 'cover',
         backgroundColor: 'rgba(255, 255, 255, 0.2)',
     }
@@ -58,13 +58,13 @@ const Header = ({ donationPackage }) => {
                         </div>
                     </div>
                     <div>
-                    {isHome && <HomeBanner handleSearchButton = {handleSearchButton} error = {showError}></HomeBanner>}
+                        {isHome && <HomeBanner handleSearchButton={handleSearchButton} error={showError}></HomeBanner>}
                     </div>
                 </div>
             </div>
-                    <div>
-                        {isHome && <FeaturedDonation packages = {displayProducts}></FeaturedDonation>}
-                    </div>
+            <div>
+                {isHome && <FeaturedDonation packages={displayProducts}></FeaturedDonation>}
+            </div>
         </div>
     );
 };

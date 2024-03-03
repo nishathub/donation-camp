@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
 const DonatedCard = ({ item }) => {
-    console.log(item);
     const {product_id, picture, category, title, category_bg, card_bg, text_button_bg, price} = item;
     const cardBgColor = {'backgroundColor' : card_bg};
     const categoryBgColor = {'backgroundColor' : category_bg, color: text_button_bg};
@@ -9,8 +8,7 @@ const DonatedCard = ({ item }) => {
     const navigate = useNavigate();
 
     const handleCardClick = id => {
-        console.log(id);
-        navigate(`/donate-Id/${product_id}`)
+        navigate(`/donate-Id/${id}`)
 
     }
 
