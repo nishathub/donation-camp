@@ -9,26 +9,26 @@ const DonationDetails = () => {
 
     const allDonatePackages = loadedData.products;
     const matchedPackage = allDonatePackages.find(item => item.product_id == id);
-    
+
     const { product_id, picture, price, description, title, text_button_bg } = matchedPackage;
 
     const handleDonateButton = () => {
-       console.log(price, product_id);
-       toast(`Donated $${price} for '${title}'`);
-       saveDataToLocalStorage(product_id);
+        console.log(price, product_id);
+        toast(`Donated $${price} for '${title}'`);
+        saveDataToLocalStorage(product_id);
     }
 
     return (
         <div className="flex justify-center text-left">
-            <div className="w-4/6 mt-12">
+            <div className="sm:w-4/6 my-12 pb-8">
                 <div className="relative">
                     <div className="donate-details-image-div">
                         <img className="w-full" src={picture} alt="" />
                     </div>
-                    <div className="absolute bottom-0 left-0 w-full h-20 text-left bg-slate-800 opacity-60 donate-details-button-div">
+                    <div className="absolute bottom-0 left-0 w-full md:h-20 h-12 text-left bg-slate-800 opacity-60 donate-details-button-div">
                     </div>
-                    <div className="absolute bottom-4 left-4">
-                        <button onClick={handleDonateButton} style={{ 'backgroundColor': text_button_bg }} className="p-2 rounded-md hover:opacity-80 duration-300">Donate ${price}</button>
+                    <div className="absolute md:bottom-4 bottom-2 md:left-4 left-2">
+                        <button onClick={handleDonateButton} style={{ 'backgroundColor': text_button_bg }} className="md:p-2 p-1 rounded-md hover:opacity-80 duration-300">Donate ${price}</button>
                         <ToastContainer />
                     </div>
                 </div>
