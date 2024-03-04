@@ -1,4 +1,4 @@
-import { PieChart, Pie, Cell, Legend, Tooltip, ResponsiveContainer } from 'recharts';
+import { PieChart, Pie, Cell, Legend, Tooltip } from 'recharts';
 import { getDataFromLocalStorage } from '../../JavaScriptFunction/localStorage';
 
 
@@ -36,7 +36,7 @@ const Statistics = () => {
     let outerRadius1 = 180;
     let outerRadius2 = 140;
     let innerRadius1 = 160;
-    let pieSquare = 400;
+    let pieSquare = 500;
 
     //Adjust inner and outer radius based on screen width
     if (window.innerWidth <= 600) {
@@ -70,7 +70,7 @@ const Statistics = () => {
                             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                         ))}
                     </Pie>
-                    <Pie data={data2} dataKey="value" cx="50%" cy="50%" innerRadius={innerRadius1} outerRadius={outerRadius1} label={renderCustomizedLabel} fill="#82ca9d" />
+                    <Pie data={data2} dataKey="value" cx="50%" cy="50%" innerRadius={innerRadius1} outerRadius={outerRadius1} label={renderCustomizedLabel} labelLine={false} fill="#82ca9d" />
                     <Legend />
                     <Tooltip></Tooltip>
                 </PieChart>
