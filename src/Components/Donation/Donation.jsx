@@ -1,11 +1,13 @@
-import { useLoaderData } from "react-router-dom";
+
 import { getDataFromLocalStorage } from "../../JavaScriptFunction/localStorage";
 import DonatedCard from "../DonatedCard/DonatedCard";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { DonationPackagesContext } from "../../JavaScriptFunction/contextApi";
 
 
 const Donation = () => {
-    const AllDonationArray = useLoaderData();
+    // const AllDonationArray = useLoaderData(); // Rather Fetch data one time and teleport it through CONTEXT below:
+    const AllDonationArray = useContext(DonationPackagesContext);
     const AllPackages = AllDonationArray.products;
     const donatedPackages = getDataFromLocalStorage();
     const [displayCards, setDisplayCards] = useState([]);

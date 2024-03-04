@@ -1,11 +1,14 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { saveDataToLocalStorage } from "../../JavaScriptFunction/localStorage";
+import { useContext } from "react";
+import { DonationPackagesContext } from "../../JavaScriptFunction/contextApi";
 
 const DonationDetails = () => {
     const { id } = useParams();
-    const loadedData = useLoaderData();
+    // const loadedData = useLoaderData(); // Rather Fetch data one time and teleport it through CONTEXT below:
+    const loadedData = useContext(DonationPackagesContext);
 
     const allDonatePackages = loadedData.products;
     const matchedPackage = allDonatePackages.find(item => item.product_id == id);

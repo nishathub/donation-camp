@@ -1,10 +1,12 @@
 import { NavLink, useLocation } from "react-router-dom";
 import HomeBanner from "../HomeBanner/HomeBanner";
 import FeaturedDonation from "../FeaturedDonation/FeaturedDonation";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { DonationPackagesContext } from "../../JavaScriptFunction/contextApi";
 
 
-const Header = ({ donationPackage }) => {
+const Header = () => {
+    const donationPackage = useContext(DonationPackagesContext);
 
     const {products} = donationPackage;
     const [displayProducts, setDisplayProducts] = useState(products);

@@ -1,6 +1,9 @@
+import PropTypes from 'prop-types';
+
 import { useNavigate } from "react-router-dom";
 
 const DonationCategoryCard = ({item}) => {
+    
     const {product_id, picture, category, title, category_bg, card_bg, text_button_bg} = item;
     const cardBgColor = {'backgroundColor' : card_bg};
     const categoryBgColor = {'backgroundColor' : category_bg, color: text_button_bg};
@@ -8,7 +11,7 @@ const DonationCategoryCard = ({item}) => {
     const navigate = useNavigate();
 
     const handleCardClick = id => {
-        navigate(`/donate-Id/${product_id}`)
+        navigate(`/donate-Id/${id}`)
 
     }
     return (
@@ -26,4 +29,8 @@ const DonationCategoryCard = ({item}) => {
     );
 };
 
+DonationCategoryCard.propTypes = {
+    item: PropTypes.object,
+    
+  };
 export default DonationCategoryCard;

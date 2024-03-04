@@ -1,4 +1,4 @@
-
+import PropTypes from 'prop-types';
 
 const HomeBanner = ({ handleSearchButton, error }) => {
 
@@ -19,5 +19,10 @@ const HomeBanner = ({ handleSearchButton, error }) => {
         </div>
     );
 };
+
+HomeBanner.propTypes = {
+    handleSearchButton: PropTypes.func,
+    error: PropTypes.bool,
+  };
 
 export default HomeBanner;
