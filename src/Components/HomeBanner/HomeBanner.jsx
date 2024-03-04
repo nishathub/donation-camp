@@ -1,4 +1,6 @@
 import PropTypes from 'prop-types';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const HomeBanner = ({ handleSearchButton, error }) => {
 
@@ -9,6 +11,7 @@ const HomeBanner = ({ handleSearchButton, error }) => {
                 <input id="search-input" placeholder="food / health etc." className="md:w-96 sm:w-64 w-44 h-10 search-input px-4 text-lg" type="text" />
                 
                 <button onClick={handleSearchButton} className="bg-red-900 hover:bg-red-700 duration-300 px-4 h-10 search-button">Search</button>
+                <ToastContainer></ToastContainer>
             </div>
             <div className="my-4">
                 {

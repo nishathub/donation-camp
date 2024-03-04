@@ -1,8 +1,9 @@
 import { NavLink, useLocation } from "react-router-dom";
 import HomeBanner from "../HomeBanner/HomeBanner";
 import FeaturedDonation from "../FeaturedDonation/FeaturedDonation";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { DonationPackagesContext } from "../../JavaScriptFunction/contextApi";
+import { toast } from 'react-toastify';
 
 
 const Header = () => {
@@ -16,6 +17,9 @@ const Header = () => {
     const handleSearchButton = () => {
         const searchField = document.getElementById('search-input');
         const searchKey = searchField.value;
+        if(searchKey === ''){
+            toast('Write a category name : ex: "food" ');
+        }
         const searchKeyLowerCase = searchKey.toLowerCase();
 
         const searchedProducts = products.filter(product => product.category === searchKeyLowerCase);
@@ -24,14 +28,28 @@ const Header = () => {
             setDisplayProducts(searchedProducts);
             setShowError(false);
         } else {
-            setDisplayProducts(products)
+            setDisplayProducts(products);
             setShowError(true);
+            
         }
-
 
 
         searchField.value = '';
     }
+    // the below code is to hide the error message after 5 seconds
+    useEffect(() => {
+        let timer;
+      
+        if (showError) {
+          timer = setTimeout(() => {
+            setShowError(false); // Hide the error message after 5 seconds
+          }, 5000);
+        }
+      
+        return () => {
+          clearTimeout(timer);
+        };
+      }, [showError]);
 
     const location = useLocation();
     const isHome = location.pathname === '/';
